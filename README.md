@@ -55,6 +55,7 @@ region=us-west-2
 
 ## 2.1 Update Account-ID and repository references
 Besides the `config` file there are a couple of other files, where we manually have to update our Account-ID's:
+> TODO: not totally clear which file to update how, especially the on_tag.yaml
 ```bash
 .
 ├── .github

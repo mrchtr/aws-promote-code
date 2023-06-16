@@ -89,7 +89,7 @@ def deploy(
 def lambda_func(event, context):
     """Is run from AWS Lambda function image (see /images/lambda/Dockerfile).
     Checks if status-change was from latest model and if this model is "approved",
-    before deploying endpoint
+    before deploying a new endpoint
     """
     # extract relevant info from event-json
     account_id = event["account"]

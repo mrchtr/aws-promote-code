@@ -35,7 +35,7 @@ If you don't provide a specific bucket name (via the flag `--bucket-name`), the 
 
 # 3. Build custom Docker image
 
-Some of the steps in our training-pipeline require specific Docker images. Additionally we need a Docker image for the Lambda function which executes our [automatic model deployment](#5-model-deployment). The following command builds and pushes both those images to the AWS Elastic-Container-Registry (ECR) on our *operations* account. Run the shell script from the `/training_pipeline` folder:
+Some of the steps in our training-pipeline require specific Docker images. Aditionally, we need a Docker image for the Lambda function which executes our [automatic model deployment](#5-model-deployment). The following command builds and pushes both those images to the AWS Elastic-Container-Registry (ECR) on our *operations* account. Run the shell script from the `/training_pipeline` folder:
 ```bash
 sh images/build_and_push_all.sh
 ```
@@ -73,7 +73,7 @@ The status of the pipeline run can be tracked inside the Sagemaker Studio **Pipe
 
 # 5. Model deployment
 
-For automatic model deployment every time a new model is registered and approved, a **AWS Lambda** function is triggered by a **AWS EventBridge rule** which either creates or updates a SageMaker endpoint. You can also deploy a registered model-version manually by running the following command. Keep in mind that only models which have been approved can be deployed.
+For automatic model deployment every time a new model is registered and approved, an **AWS Lambda** function is triggered by an **AWS EventBridge rule** which either creates or updates a SageMaker endpoint. You can also deploy a registered model-version manually by running the following command. Keep in mind that only models which have been approved can be deployed.
 ```
 python deploy.py --profile dev --model-version 1
 ```
@@ -87,7 +87,7 @@ python deploy.py --profile dev
 To test the model endpoint and create a Batch Transformation use the [Inference Notebook](/training_pipeline/test.ipynb).
 
 # 7. Automatic retraining
-It is common to retrain Machine Learning models after a certain time or if certain measures indicate a decrease in prediction quality. In this project automatic retraining is simply triggered every week. This is done by a **AWS EventBridge Schedule** and is by default only enabled in the *production* account.
+It is common to retrain Machine Learning models after a certain time or if certain measures indicate a decrease in prediction quality. In this project automatic retraining is simply triggered every week. This is done by an **AWS EventBridge Schedule** and is by default only enabled in the *production* account.
 
 # Contributing
 

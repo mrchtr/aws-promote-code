@@ -30,7 +30,7 @@ data "aws_iam_policy_document" "assume_policy" {
     condition {
       test     = "StringLike"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:ml6team/aws-promote-code:*"]
+      values   = ["repo:mrchtr/aws-promote-code:*"]
     }
     condition {
       test     = "StringEquals"
