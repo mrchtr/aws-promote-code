@@ -47,7 +47,7 @@ resource "aws_lambda_function" "lambda_sagemaker_deploy" {
   description   = "Deploys the latest and approved model"
   package_type  = "Image"
   role          = aws_iam_role.iam_for_lambda.arn
-  image_uri     = "123971416876.dkr.ecr.${var.region}.amazonaws.com/lambda-image:latest"
+  image_uri     = "190942478838.dkr.ecr.eu-central-1.amazonaws.com/lambda-image:latest"
   timeout       = 600 # deployment can take 5 to 10min
 }
 

@@ -33,6 +33,8 @@ python upload_dataset.py --profile dev
 ```
 If you don't provide a specific bucket name (via the flag `--bucket-name`), the **Sagemaker Default bucket** is chosen as the location of your training data.
 
+> TODO: make sure the bucket was created before, if you define a own bucket name
+
 # 3. Build custom Docker image
 
 Some of the steps in our training-pipeline require specific Docker images. Aditionally, we need a Docker image for the Lambda function which executes our [automatic model deployment](#5-model-deployment). The following command builds and pushes both those images to the AWS Elastic-Container-Registry (ECR) on our *operations* account. Run the shell script from the `/training_pipeline` folder:

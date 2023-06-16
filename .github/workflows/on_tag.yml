@@ -25,14 +25,14 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-region: eu-west-3
-          role-to-assume: arn:aws:iam::381667332649:role/381667332649-github-full-access
+          role-to-assume: arn:aws:iam::422285726080:role/422285726080-github-full-access
 
       - name: Login to [prod] account
         if: startsWith(github.ref, 'refs/tags/prod')
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-region: eu-west-3
-          role-to-assume: arn:aws:iam::343975642840:role/343975642840-github-full-access
+          role-to-assume: arn:aws:iam::245107180149:role/245107180149-github-full-access
 
       - name: Build all resources with terraform
         working-directory: ./terraform/main

@@ -61,7 +61,7 @@ resource "aws_scheduler_schedule" "training_pipeline_scheduler" {
   schedule_expression = "rate(7 days)"
 
   target {
-    arn      = "arn:aws:sagemaker:eu-west-3:${var.account}:pipeline/training-pipeline"
+    arn      = "arn:aws:sagemaker:eu-central-1:${var.account}:pipeline/training-pipeline"
     role_arn = aws_iam_role.eventbridge_scheduler_exec_role.arn
     sagemaker_pipeline_parameters {
       pipeline_parameter {

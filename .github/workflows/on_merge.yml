@@ -24,7 +24,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-region: eu-west-3
-          role-to-assume: arn:aws:iam::123971416876:role/123971416876-github-full-access
+          role-to-assume: arn:aws:iam::190942478838:role/190942478838-github-full-access
 
       - name: Build Docker containers and push to ECR
         working-directory: ./training_pipeline

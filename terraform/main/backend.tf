@@ -4,9 +4,9 @@
 
 terraform {
   backend "s3" {
-    bucket  = "123971416876-operations-terraform"
+    bucket  = "391281939159-terraform-backend"
     key     = "terraform_state"
-    region  = "eu-west-3"
+    region  = "eu-west-1"
     profile = "operations"
   }
 }
