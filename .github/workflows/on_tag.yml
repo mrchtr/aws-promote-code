@@ -39,6 +39,7 @@ jobs:
         run: |
           TAG_NAME=${{ github.ref }}
           ENV_NAME=${TAG_NAME#refs/tags/} # Remove the 'refs/tags/' prefix
+          echo $ENV_NAME
           terraform init
           terraform workspace select "$ENV_NAME"
           terraform apply -auto-approve --var-file environment/"$ENV_NAME".tfvars
